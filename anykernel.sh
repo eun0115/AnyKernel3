@@ -10,7 +10,7 @@ do.modules=0
 do.systemless=1
 do.cleanup=1
 do.cleanuponabort=1
-device.name1=wisdom
+device.name1=gta3xlwifi
 supported.versions=
 '; } # end properties
 
