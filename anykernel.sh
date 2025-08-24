@@ -11,11 +11,7 @@ do.systemless=1
 do.cleanup=1
 do.cleanuponabort=1
 device.name1=wisdom
-device.name2=wisdomwifi
-device.name3=gta3xl
-device.name4=gta3xlwifi
-device.name5=
-supported.versions=10-11
+supported.versions=
 '; } # end properties
 
 # shell variables
@@ -28,25 +24,8 @@ patch_vbmeta_flag=auto;
 # import patching functions/variables - see for reference
 . tools/ak3-core.sh;
 
-## AnyKernel install
-dump_boot;
-
-# mount system and vendor
-mount /system_root;
-mount -o rw,remount /vendor;
-
-# Find device/rom and copy kernel
-device_name="$(grep ro.product.vendor.device /vendor/build.prop | cut -d'=' -f2)";
-if grep -q gta3xlwifi /vendor/build.prop; then
-    cp -f "$home/Image_${device_name}" "$home/Image";
-elif grep -q gta3xl /vendor/build.prop; then
-    cp -f "$home/Image_${device_name}" "$home/Image";
-elif grep -q wisdomwifi /vendor/build.prop; then
-    cp -f "$home/Image_${device_name}" "$home/Image";
-else
-    cp -f "$home/Image_${device_name}" "$home/Image";
-fi
-
-write_boot;
-
-## end install
+## AnyKernel boot install
+split_boot;
+flash_boot;
+flash_dtbo;
+## end boot install
