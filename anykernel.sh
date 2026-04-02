@@ -5,11 +5,11 @@
 # begin properties
 properties() { '
 kernel.string=Cartel Kernel by eun0115
-do.devicecheck=1
+do.devicecheck=0
 do.modules=0
 do.systemless=1
 do.cleanup=1
-do.cleanuponabort=0
+do.cleanuponabort=1
 device.name1=
 device.name2=
 device.name3=
