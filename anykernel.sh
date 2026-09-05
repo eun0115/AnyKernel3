@@ -20,8 +20,8 @@ supported.vendorpatchlevels=
 ### AnyKernel install
 
 ## Boot shell variables
-BLOCK=auto
-IS_SLOT_DEVICE=auto
+BLOCK=boot
+IS_SLOT_DEVICE=1
 RAMDISK_COMPRESSION=auto
 PATCH_VBMETA_FLAG=auto
 
